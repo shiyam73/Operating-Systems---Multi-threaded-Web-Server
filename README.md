@@ -53,6 +53,8 @@ all in a single line per request. That is, it will log:
 Example:
 
 127.0.0.1 - [19/Sep/2011:13:55:36 -0600] [19/Sep/2011:13:58:21 -0600] "GET /index.html HTTP/1.0" 200 326
+
+
 MULTITHREADING:
 
 The server will consist of 2+n threads. A pool of n threads will be always ready for executing/serving incoming requests (n x execution threads). The number n is given as a parameter when you start the server (using option: -n threadnum). One thread will be responsible for listening to incoming HTTP requests and inserting them in a ready queue (1 x queuing thread). Another thread will be responsible for choosing a request from the ready queue and scheduling it to one of the execution threads (1 x scheduling thread).
